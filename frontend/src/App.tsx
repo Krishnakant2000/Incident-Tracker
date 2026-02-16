@@ -1,35 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import IncidentList from './pages/IncidentList';
+import IncidentDetail from './pages/IncidentDetail';
+import CreateIncident from './pages/CreateIncident';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <BrowserRouter>
+      <div className="min-h-screen bg-gray-50">
+        <header className="bg-white border-b px-6 py-4 flex justify-between items-center">
+          <Link to="/" className="text-xl font-bold text-gray-800">Incident Tracker</Link>
+          <Link to="/create" className="bg-gray-800 text-white px-4 py-2 rounded text-sm hover:bg-gray-700">
+            New Incident
+          </Link>
+        </header>
+        <main className="p-6 max-w-6xl mx-auto">
+          <Routes>
+            <Route path="/" element={<IncidentList />} />
+            <Route path="/incident/:id" element={<IncidentDetail />} />
+            <Route path="/create" element={<CreateIncident />} />
+          </Routes>
+        </main>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </BrowserRouter>
+  );
 }
-
-export default App
