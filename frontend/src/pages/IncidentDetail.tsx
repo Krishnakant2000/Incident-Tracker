@@ -151,7 +151,7 @@ export default function IncidentDetail() {
                     <button
                         onClick={handleSave}
                         disabled={saving}
-                        className="bg-gray-800 text-white px-6 py-2 rounded hover:bg-gray-700 disabled:opacity-50"
+                        className="bg-blue-600 text-white px-6 py-2.5 rounded-lg text-sm font-medium hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 transition-all disabled:opacity-50 shadow-sm"
                     >
                         {saving ? 'Saving...' : 'Save Changes'}
                     </button>

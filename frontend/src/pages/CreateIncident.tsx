@@ -134,7 +134,7 @@ export default function CreateIncident() {
                         type="text"
                         name="owner"
                         placeholder="Optional"
-                        className="w-full border rounded px-3 py-2 outline-none"
+                        className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-shadow"
                         value={formData.owner}
                         onChange={handleChange}
                     />
@@ -147,7 +147,7 @@ export default function CreateIncident() {
                         name="summary"
                         placeholder="Describe the incident..."
                         rows={4}
-                        className="w-full border rounded px-3 py-2 outline-none"
+                        className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-shadow"
                         value={formData.summary}
                         onChange={handleChange}
                     ></textarea>
@@ -158,7 +158,7 @@ export default function CreateIncident() {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="bg-gray-800 text-white px-6 py-2 rounded hover:bg-gray-700 disabled:opacity-50"
+                        className="bg-blue-600 text-white px-6 py-2.5 rounded-lg text-sm font-medium hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 transition-all disabled:opacity-50 shadow-sm"
                     >
                         {loading ? 'Creating...' : 'Create Incident'}
                     </button>
