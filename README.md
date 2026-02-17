@@ -13,7 +13,8 @@ A full-stack web application for engineers to create, browse, and manage product
 2. `npm install`
 3. `npx prisma db push` (Initializes the SQLite database)
 4. `npx ts-node prisma/seed.ts` (Seeds the database with ~200 records)
-5. `npm run dev` (Starts server on port 3000. *Note: add `"dev": "nodemon index.ts"` to your package.json scripts*)
+5. ` npx ts-node index.ts` (Starts server on port 3000. *Note: add `"dev": "nodemon index.ts"` to your package.json scripts*)
+`NOTE : `Add a .env file in the backend folder with the following content: DATABASE_URL="file:./dev.db"
 
 ### Frontend Setup
 1. `cd frontend`
